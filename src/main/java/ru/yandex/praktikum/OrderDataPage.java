@@ -61,7 +61,7 @@ public class OrderDataPage {
         telephoneField.sendKeys(telephone);
     }
 
-    // Кликнуть по кнопке Далее на странице Для кого самокат
+    // Кликнуть по кнопке Далее на странице Для кого самокат (страница)
     public void clickOrderButtonFurther() {
         WebElement furtherButton = driver.findElement(orderButtonFurther);
         furtherButton.click();

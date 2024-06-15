@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.concurrent.TimeUnit;
 
 //базовый класс для подключения драйвера Chrome
-public class SetupBrowserChrome {
+public class ConnectionChrome {
     WebDriver driver;
 
     //подключение драйвера браузера и установление ожидания в 5 секунд

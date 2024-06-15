@@ -8,12 +8,12 @@ import ru.yandex.praktikum.HomePage;
 import static org.junit.Assert.assertTrue;
 
 @RunWith(Parameterized.class)
-public class ImportantQuestionButtonClickTest extends setupBrowserFF {
+public class ImpotantQuestionTest extends ConnectionFF {
 
     private final int listIndex;
 
     // Конструктор тест-класса для проверки видимости текста при нажатии кнопки вопроса
-    public ImportantQuestionButtonClickTest(int listIndex) {
+    public ImpotantQuestionTest(int listIndex) {
         this.listIndex = listIndex;
     }
 

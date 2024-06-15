@@ -15,7 +15,7 @@ public class RentOrderPage {
     private final By orderDataWhenDelivery = By.xpath("//input[@placeholder='* Когда привезти самокат']");
     // Локатор для поля Срок аренды
     private final By rentalPeriod = By.className("Dropdown-placeholder");
-    // Локаторы для сроков аренды
+    // Локаторы для сроков аренды.
     private final By[] rentalPeriods = {
             By.xpath(".//*[@class='Dropdown-option'][1]"),
             By.xpath(".//*[@class='Dropdown-option'][2]"),

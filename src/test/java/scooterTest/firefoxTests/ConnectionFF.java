@@ -8,7 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import java.util.concurrent.TimeUnit;
 
 // базовый класс для подключения драйвера FireFox
-public class setupBrowserFF {
+public class ConnectionFF {
     WebDriver driver;
 
     @Before

@@ -48,7 +48,7 @@ public class HomePage {
         this.driver = driver;
     }
 
-    // Открыть главную страницу Самоката
+    // Открыть главную страницу Самоката (страница)
     public void openScooterPage() {
         driver.get("https://qa-scooter.praktikum-services.ru/");
     }

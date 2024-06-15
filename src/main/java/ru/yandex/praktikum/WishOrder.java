@@ -16,7 +16,7 @@ public class WishOrder {
         this.driver = driver;
     }
 
-    // Метод нажатия на кнопку Да
+    // Метод нажатия на кнопку Да.
     public WishOrder clickOkButton() {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         WebElement okButtonElement = wait.until(ExpectedConditions.elementToBeClickable(okButton));

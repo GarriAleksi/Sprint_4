@@ -8,12 +8,12 @@ import ru.yandex.praktikum.HomePage;
 import static org.junit.Assert.assertTrue;
 
 @RunWith(Parameterized.class)
-public class ImportantQuestionButtonClickTest extends SetupBrowserChrome {
+public class ImpotantQuestionTest extends ConnectionChrome {
 
     private final int listIndex;
 
     // Конструктор тест-класса Вопросы о важном с параметром индекса
-    public ImportantQuestionButtonClickTest(int listIndex) {
+    public ImpotantQuestionTest(int listIndex) {
         this.listIndex = listIndex;
     }
 
