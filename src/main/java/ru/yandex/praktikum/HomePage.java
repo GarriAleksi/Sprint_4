@@ -24,7 +24,7 @@ public class HomePage {
             By.id("accordion__heading-6"), By.id("accordion__heading-7")
     };
 
-    // Локаторы текстовых ответов раздела Вопросы о важном
+    // Локаторы текстовых ответов раздела Вопросы о важном и
     private By[] answersImpotantQuestionsArray = {
             By.xpath(".//div[@id='accordion__panel-0']/p"), By.xpath(".//div[@id='accordion__panel-1']/p"),
             By.xpath(".//div[@id='accordion__panel-2']/p"), By.xpath(".//div[@id='accordion__panel-3']/p"),
