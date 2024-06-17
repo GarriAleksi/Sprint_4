@@ -1,4 +1,4 @@
-package scooterTest.firefoxTests;
+package scootertest.chrometests;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,9 +7,8 @@ import ru.yandex.praktikum.*;
 
 import static org.junit.Assert.assertTrue;
 
-// Класс с автотестами для обработки заказа
 @RunWith(Parameterized.class)
-public class OrderStatusTest extends ConnectionFF {
+public class OrderStatusTest extends ConnectionChrome {
 
     private final String buttonLocation;
     private final String name;
@@ -20,9 +19,8 @@ public class OrderStatusTest extends ConnectionFF {
     private final int days;
     private final String newColor;
     private final String newComment;
-    private HomePage objHomePage;
 
-    // конструктор тест-класса с параметрами заказа
+    // Конструктор тест-класса
     public OrderStatusTest(String buttonLocation, String name, String surname, String address, String telephone, String newDate, int days, String newColor, String newComment) {
         this.buttonLocation = buttonLocation;
         this.name = name;
@@ -35,7 +33,7 @@ public class OrderStatusTest extends ConnectionFF {
         this.newComment = newComment;
     }
 
-    // набор тестовых данных для заказа
+    // Тестовые данные
     @Parameterized.Parameters
     public static Object[][] getOrderData() {
         return new Object[][]{
@@ -44,48 +42,45 @@ public class OrderStatusTest extends ConnectionFF {
         };
     }
 
-    // Тест на оформление заказа
     @Test
     public void enterOrderAllDataTest() {
-        openHomePage(); // Открытие главной страницы
-        clickOrderButton(); // Нажатие кнопки заказа
-        enterOrderData(); // Ввод данных для заказа
-        enterRentData(); // Ввод данных для аренды
-        confirmOrder(); // Подтверждение заказа
-        verifyOrderProcessed(); // Проверка успешного оформления заказа
+        openHomePage();
+        clickOrderButton();
+        enterOrderData();
+        enterRentData();
+        confirmOrder();
+        verifyOrderProcessed();
     }
 
-    // Открытие главной страницы
     private void openHomePage() {
-        objHomePage = new HomePage(driver);
+        // Создаю объект главной страницы и открываю сайт Самоката
+        HomePage objHomePage = new HomePage(driver);
         objHomePage.openScooterPage();
     }
 
-    // Нажатие кнопки заказа в зависимости от местоположения
     private void clickOrderButton() {
+        // Выбираю кнопку Заказать для клика
+        HomePage objHomePage = new HomePage(driver);
         objHomePage.chooseOrderButtonAndClick(buttonLocation);
     }
 
-    // Ввод данных для заказа
     private void enterOrderData() {
-        new OrderDataPage(driver)
-                .enterOrderAllData(name, surname, address, telephone);
+        // Ввожу данные на странице Для кого самокат
+        new OrderDataPage(driver).enterOrderAllData(name, surname, address, telephone);
     }
 
-    // Ввод данных для аренды
     private void enterRentData() {
-        new RentOrderPage(driver)
-                .enterAllDataRentOrder(newDate, days, newColor, newComment);
+        // Ввожу данные на странице Про аренду
+        new RentOrderPage(driver).enterAllDataRentOrder(newDate, days, newColor, newComment);
     }
 
-    // Подтверждение заказа
     private void confirmOrder() {
-        new WishOrder(driver)
-                .clickOkButton();
+        // Нажимаю кнопку Да в окне Хотите оформить заказ?
+        new WishOrder(driver).clickOkButton();
     }
 
-    // Проверка успешного оформления заказа
     private void verifyOrderProcessed() {
+        // Проверяю, что поле "Заказ оформлен". В приложении есть баг, который не даёт оформить заказ. Он воспроизводится только в Chrome
         assertTrue(new OrderIsProcessed(driver).orderIsProcessedTextIsDisplayed());
     }
 }

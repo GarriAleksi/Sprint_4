@@ -1,5 +1,6 @@
-package scooterTest.firefoxTests;
+package scootertest.firefoxtests;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
@@ -14,7 +15,7 @@ public class ConnectionFF {
     @Before
     // метод для настройки браузера и установки ожидания в 5 секунд
     public void setupBrowser() {
-        System.setProperty("webdriver.gecko.driver", "C:\\EDIprojects\\FireFoxTest\\geckodriver.exe");
+        WebDriverManager.firefoxdriver().setup();
         driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }

@@ -1,4 +1,4 @@
-package scooterTest.chromeTests;
+package scootertest.chrometests;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

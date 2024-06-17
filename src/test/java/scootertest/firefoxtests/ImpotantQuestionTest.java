@@ -1,4 +1,4 @@
-package scooterTest.firefoxTests;
+package scootertest.firefoxtests;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
